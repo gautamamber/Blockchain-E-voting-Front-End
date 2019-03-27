@@ -11,20 +11,22 @@ ead>
 <link rel="stylesheet" type="text/css" href="style.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/js/materialize.min.js"></script>
+ <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
 
 <body>
 
 <!-- Navbar (sit on top) -->
 <div class="w3-top">
-  <div class="w3-bar w3-white w3-card" id="myNavbar">
+  <div class="w3-bar w3-white w3-card"  id="myNavbar">
     <a href="#home" class="w3-bar-item w3-button w3-wide">E-VOTING</a>
     <!-- Right-sided navbar links -->
     <div class="w3-right w3-hide-small">
-      <a href="#about" class="w3-bar-item w3-button">ABOUT</a>
+      <a href="#about" class="w3-bar-item w3-button">BLOCKCHAIN</a>
       <a href="#team" class="w3-bar-item w3-button"><i class="fa fa-user"></i> TEAM</a>
-      <a href="#work" class="w3-bar-item w3-button"><i class="fa fa-th"></i> WORK</a>
-      <a href="#contact" class="w3-bar-item w3-button"><i class="fa fa-envelope"></i> CONTACT</a>
+      <a href="#work" class="w3-bar-item w3-button"></i>WORK</a>
+      <a href="#contact" class="w3-bar-item w3-button"></i>RESULT</a>
     </div>
     <!-- Hide right-floated links on small screens and replace them with a menu icon -->
 
@@ -40,34 +42,78 @@ ead>
   <a href="#about" onclick="w3_close()" class="w3-bar-item w3-button">ABOUT</a>
   <a href="#team" onclick="w3_close()" class="w3-bar-item w3-button">TEAM</a>
   <a href="#work" onclick="w3_close()" class="w3-bar-item w3-button">WORK</a>
-  <a href="#contact" onclick="w3_close()" class="w3-bar-item w3-button">CONTACT</a>
+  <a href="#contact" onclick="w3_close()" class="w3-bar-item w3-button">RESULT</a>
 </nav>
 
 
 <br><br><br>
 <br>
+<div class="container"> 
+   <div class="row"> 
+     <div class = "col-xs-12">
+       <center>
+         <p style="font-size: 50px;">Give Your Precious Vote</p>
+       </center>
+     </div>
+   </div>
+ </div>
+
+ <br><br>
+
 <div class="container">
   <div class="row">
-    <div class="col-xs-12"> 
-     <center>
-       <h1>
-         Give your precious Vote
-       </h1>
-     </center>
+    <div class="col-sm-6"> 
+     <div>
+       <center><img src="Images/AAP.jpg" height="200px;" width="200px;" >
+       <p class="vote_margin"><b>Party: Aam Admi Party (AAP)</b></p>
+       <p class="vote_margin"><b>आम आदमी पार्टी</b></p>
+       <p class="vote_margin"><b>Candidate: Arvind Kejriwal</b></p>
+       <button class="waves-effect waves-light btn vote_margin">Vote for AAP</button></center>
+     </div>
+    </div>
+
+    <div class="col-sm-6"> 
+     <div>
+       <center><img src="Images/BASPA.png" height="200px;" width="200px;">
+       <p class="vote_margin"><b>Party: Bahujan Samajwadi party (BASPA)</b></p>
+       <p class="vote_margin"><b>
+बहुजन समाजवादी पार्टी</b></p>
+       <p class="vote_margin"><b>Candidate: Mayawati</b></p>
+       <button class="waves-effect waves-light btn vote_margin">Vote for BASPA</button></center>
+     </div>
     </div>
   </div>
 </div>
 
+
+<br>
+<br>
+<br>
+<br>
+<br>
+
+
 <div class="container">
   <div class="row">
-    <div class="col-xs-12"> 
-     <center>
-       <h1>
-         <form>
-           
-         </form>
-       </h1>
-     </center>
+    <div class="col-sm-6"> 
+     <div>
+       <center><img src="Images/congress.jpeg" height="200px;" width="200px;">
+       <p class="vote_margin"><b>Party: Congress</b></p>
+       <p class="vote_margin"><b>कांग्रेस</b></p>
+       <p class="vote_margin"><b>Candidate: Rahul Gandhi</b></p>
+       <button class="waves-effect waves-light btn vote_margin">Vote for Congress</button></center>
+     </div>
+    </div>
+
+    <div class="col-sm-6"> 
+     <div>
+       <center><img src="Images/BJP.png" height="200px;" width="200px;">
+       <p class="vote_margin"><b>Party: Bhartiya Janta Party (BJP)</b></p>
+       <p class="vote_margin"><b>
+भारतीय जनता पार्टी</b></p>
+       <p class="vote_margin"><b>Candidate: Narendra Modi</b></p>
+       <button class="waves-effect waves-light btn vote_margin">Vote for BJP</button></center>
+     </div>
     </div>
   </div>
 </div>
