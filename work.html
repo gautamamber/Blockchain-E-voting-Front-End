@@ -56,6 +56,100 @@ ead>
 </div>
 
 
+<div class="container">  
+<div class="row">
+  <div class="col-xs-12">
+    
+
+
+    <p><h3><b>Abstract</b></h3></p>
+    <p class="w3-justify">
+
+Our country is a worlds largest democracy country and voting is a very crucial part of indian democracy. Indian politicians or any goverment is elected by only voting. The most common way of voting was in ancient time is Paper ballot system and not a days with EVM or electronic voting machine which is a software based voting. Because it is a software and control by an organization it is very difficult to maintain the security of votes. In E-voting was introduced to address those concerns. In this paper, we propose a blockchain enabled Voting system which is decentralized, secure with cryptography, non-alterable. By using this the voting system is transparent, secure, cost effective and immpossible to alter votes by anyone. For this we used a Ethereum Blockchain to store votes and smart contracts for voting. Our implementation was deployed on Ethereum blockchain to demonstrate usuability, scalability, efficiency.</p>
+<p><b>Keyswords: </b>Voting, Elections, Blockchain, Ethereum, Smart contracts </p>
+
+
+
+<p><h3><b>Introduction</b></h3></p>
+    <p class="w3-justify">
+
+India is a largest democracy country in the world. Indian democracy is govern by the people, for the people and of the people. The citizens of india has right to choose their representative or leaders by voting. So every citizens who are above 18 years right to vote. In Indian democracy voting plays a vital or electing leaders. In India and in many countries voting is done by EVM (Electronic Voting Machine). Now there is problem. Many times questions arises Is EVM can be hacked or in recent survey it is said by cyber expert, EVM could be hacked. So, its a matter of security of common people votes. 
+Now to prevent this, We are here to come up with a solution Blockchain enabled Voting.</p>
+
+
+<p><h3><b>What is Blockchain ? </b></h3></p>
+    <p class="w3-justify">
+
+Before explaining what is blockchain, lets consider a scenario, There are two friends Alice and Bob, Alice wants to send some amount of money (10000$) to Bob. What he do, he will transfer money with his bank account and bank manager controls your transaction, he will deduct fix amount from your account and add to Bob's account then transaction complete. In this case bank and bank manager act as a center or third party on which we are depend. Not only money transaction but also in many sectors in which we will depend on some central party or authority. To establish trust between ourselves we depend on individual third party. For years we've depending on these middlemen to trust each other. Someone might ask “What is the problem depending on them?” The problem is they are single party or person or organization.</p>
+
+
+
+<p><h3><b>So how to overcome with above problem</b></h3></p>
+    <p class="w3-justify">
+
+In 2008 a person named Satoshi Nakamoto released a Paper “Bitcoin: A peer to peer Electronic Cash system”. It was the first application of Blockchain technology for cryptocurrency called Bitcoin. 
+Continue with our above example, what if Alice wants to send money to Bob without any third party like bank. Blockchain will solve this problem. 
+Blockchain is a growing list of transaction or records called blocks which are linked with cryptographic hash. Each block contains a cyrptographic hash of its previous block (just like linkedlist, contains address to next node), timestamp and transaction data and merkely root.</p>
+<br>
+<center>
+  <img src="Images/blockchaian.jpg" height="300px;" width="300px;">
+</center>
+
+
+<p><h3><b>Key features of Blockchain</b></h3></p>
+    <p class="w3-justify">
+
+<ul>
+  <li>
+    <p>Peer to Peer network</p>
+    <center>
+  <img src="Images/peer_to_peer.jpg" height="300px;" width="300px;">
+</center>
+  </li>
+  <li>
+    <p>Decentralized</p>
+    <center>
+  <img src="Images/decentralized.jpg" height="300px;" width="300px;">
+</center>
+  </li>
+  <li>
+    <p>Disdtributive Ledgers</p>
+  </li>
+  <li>
+    <p>Cryptographic hash</p>
+    <center>
+  <img src="Images/hash.jpg" height="300px;" width="300px;">
+</center>
+  </li>
+  <li>
+    <p>Proof of work</p>
+  </li>
+</ul>
+
+</p>
+<br>
+
+<p><h3><b>How Blockchain works:</b></h3></p>
+    <p class="w3-justify">
+
+Lets discuss how a blockchain work. There a network of Blockchain in which there are many nodes or CPU's which are connected Peer to peer network. When a new transaction is released it broadcast to all nodes in a blockchain. Every node have a ledger. Now to complete or verify the transaction every node need to finding a difficult proof of work which is a mathematical puzzle. When a node finds a proof of work or solve a problem successfully, it broadcast to all the nodes but the node who find the proof of work first will rewarded with some amount of Bitcoin (In case of Bitcoin) or any other cryptocurrency. When a transaction is verified it will give a unique transaction id and store in a particular block or written in a ledger. When this ledger is complete it will add in a Blockchain with previous hash of a block which is not alterable in future and Blockchain continously growing. </p>
+
+<p><b>Security:</b> Suppose some want to temper with data save in one block. But the hash of that block is saved in next block, so if data is altered according to hash property the hash of block is change so whole blockchain is disturbed. 
+Secondly It will take 10 minutes to create a new block which include proof of work. If anyone want to alter the data in a block it is necessary to recalculate the proof of work and it will take much time and huge computational power, so it is immpossible to alter data in Blockchain.</p>
+
+
+<p><h3><b>Ethereum:</b></h3></p>
+    <p class="w3-justify">
+
+Initially when Bitcoin paper was released it was the only application of Blockchain. But after some times it is also possible to make applications on Blockchain for other sectors such as Finance, Real Estate, E-commerce. E-voting is one of them. Such type of applications which are build on Blockchain knows a DAPPS or Decentralized Application. But it was not possible to build DAPPS with bitcoin. So a new Blockchain was introduced known as Ethereum or the cryptocurrency for this is ether. By using Ethereum Blockchain building DAPPS are very efficient. For this we have to write some rules, now Smart contract comes into play. It is a kind contract in which some rules are specified for a particular task. For writing smart contracts there are many programming languages, Solidity is one of them and widely used. In Solidity we will write our smart contracts and deploy to Ethereum Blockchain and we get a unique address. Now when someone enter some input, it will in the form of transaction and a little amount of fee or GAS is required. .</p>
+
+
+
+  </div>
+</div>
+</div>
+
+
 
 
 <!-- Footer -->
