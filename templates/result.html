@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html>
+<title>Blockchain Enables E-Voting</title>
+<meta charset="UTF-8">
+ead>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/css/materialize.min.css">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+<link rel="stylesheet" type="text/css" href="style.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+ <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/js/materialize.min.js"></script>
+ <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+
+<body>
+
+<!-- Navbar (sit on top) -->
+<div class="w3-top">
+  <div class="w3-bar w3-white w3-card"  id="myNavbar">
+    <a href="/" class="w3-bar-item w3-button w3-wide">E-VOTING</a>
+    <!-- Right-sided navbar links -->
+    <div class="w3-right w3-hide-small">
+      
+      <a href="/" class="w3-bar-item w3-button"></i>HOME</a>
+      <a href="paper_work" class="w3-bar-item w3-button"></i>WORK</a>
+     
+    </div>
+    <!-- Hide right-floated links on small screens and replace them with a menu icon -->
+
+    <a href="javascript:void(0)" class="w3-bar-item w3-button w3-right w3-hide-large w3-hide-medium" onclick="w3_open()">
+      <i class="fa fa-bars"></i>
+    </a>
+  </div>
+</div>
+
+<!-- Sidebar on small screens when clicking the menu icon -->
+<nav class="w3-sidebar w3-bar-block w3-black w3-card w3-animate-left w3-hide-medium w3-hide-large" style="display:none" id="mySidebar">
+  <a href="javascript:void(0)" onclick="w3_close()" class="w3-bar-item w3-button w3-large w3-padding-16">Close ×</a>
+ 
+  <a href="index.html" onclick="w3_close()" class="w3-bar-item w3-button">HOME</a>
+  <a href="work.html" onclick="w3_close()" class="w3-bar-item w3-button">WORK</a>
+</nav>
+
+
+<br><br><br><br>
+
+ <!-- Reslt of voting out of four parties -->
+
+ <div class="container"> 
+   <div class="row"> 
+     <div class = "col-xs-12">
+       <center>
+         <p style="font-size: 70px;">Live Result</p>
+       </center>
+     </div>
+   </div>
+ </div>
+
+  <br><br>
+
+<div class="container">
+  <div class="row">
+    <div class="col-sm-6"> 
+     <div>
+       <center><img src="static/AAP.jpg" height="200px;" width="200px;" >
+       <p class="vote_margin"><b>Party: Aam Admi Party (AAP)</b></p>
+       <p class="vote_margin"><b>आम आदमी पार्टी</b></p>
+       <p class="vote_margin"><b>Candidate: Arvind Kejriwal</b></p>
+       <button onclick="logVotes('AAP')" class="waves-effect waves-light btn" id="button1">Result for AAP</button>
+       <p class="vote_margin"><b>Total Votes: 10</b></p>
+     </div>
+    </div>
+
+
+
+
+
+
+    <div class="col-sm-6"> 
+     <div>
+       <center><img src="static/BASPA.png" height="200px;" width="200px;">
+       <p class="vote_margin"><b>Party: Bahujan Samajwadi party (BASPA)</b></p>
+       <p class="vote_margin"><b>
+बहुजन समाजवादी पार्टी</b></p>
+       <p class="vote_margin"><b>Candidate: Mayawati</b></p>
+       <button onclick="logVotes('BASPA')" class="waves-effect waves-light btn" id="button2">Result for BASPA</button>
+       <p class="vote_margin"><b>Total Votes: 10</b></p>
+     </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+<br>
+<br>
+<br>
+<br>
+<br>
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-sm-6"> 
+     <div>
+       <center><img src="static/congress.jpeg" height="200px;" width="200px;">
+       <p class="vote_margin"><b>Party: Congress</b></p>
+       <p class="vote_margin"><b>कांग्रेस</b></p>
+       <p class="vote_margin"><b>Candidate: Rahul Gandhi</b></p>
+       <button onclick="logVotes('CONGRESS')" class="waves-effect waves-light btn" id="button4">Result for Congress</button>
+       <p class="vote_margin"><b>Total Votes: 10</b></p>
+     </div>
+    </div>
+
+
+
+
+
+
+    <div class="col-sm-6"> 
+     <div>
+       <center><img src="static/BJP.png" height="200px;" width="200px;">
+       <p class="vote_margin"><b>Party: Bhartiya Janta Party (BJP)</b></p>
+       <p class="vote_margin"><b>
+भारतीय जनता पार्टी</b></p>
+       <p class="vote_margin"><b>Candidate: Narendra Modi</b></p>
+       <button onclick="logVotes('BJP')" class="waves-effect waves-light btn" id="button3">Result for BJP</button>
+       <p class="vote_margin"><b>Total Votes: 10</b></p>
+     </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+<!-- Footer -->
+<br>
+<footer class="w3-center w3-black w3-padding-64">
+  <a href="#home" class="w3-button w3-light-grey"><i class="fa fa-arrow-up w3-margin-right"></i>To the top</a>
+  <div class="w3-xlarge w3-section">
+    <i class="fa fa-facebook-official w3-hover-opacity"></i>
+    <i class="fa fa-instagram w3-hover-opacity"></i>
+    <i class="fa fa-snapchat w3-hover-opacity"></i>
+    <i class="fa fa-pinterest-p w3-hover-opacity"></i>
+    <i class="fa fa-twitter w3-hover-opacity"></i>
+    <i class="fa fa-linkedin w3-hover-opacity"></i>
+  </div>
+  <p>Created By: Amber Gautam</p>
+</footer>
+ 
+<script>
+
+
+// Close the sidebar with the close button
+
+
+
+
+
+        var voteManagerAbi = [
+  {
+    "constant": false,
+    "inputs": [],
+    "name": "close",
+    "outputs": [],
+    "payable": false,
+    "type": "function",
+    "stateMutability": "nonpayable"
+  },
+  {
+    "constant": false,
+    "inputs": [],
+    "name": "openVoting",
+    "outputs": [],
+    "payable": false,
+    "type": "function",
+    "stateMutability": "nonpayable"
+  },
+  {
+    "constant": false,
+    "inputs": [
+      {
+        "name": "_partyManagerContract",
+        "type": "address"
+      }
+    ],
+    "name": "setPartyManagerContractDefined",
+    "outputs": [],
+    "payable": false,
+    "type": "function",
+    "stateMutability": "nonpayable"
+  },
+  {
+    "constant": false,
+    "inputs": [
+      {
+        "name": "_voterManagerContract",
+        "type": "address"
+      }
+    ],
+    "name": "setVoterManagerContractAddress",
+    "outputs": [],
+    "payable": false,
+    "type": "function",
+    "stateMutability": "nonpayable"
+  },
+  {
+    "constant": false,
+    "inputs": [
+      {
+        "name": "_party",
+        "type": "string"
+      }
+    ],
+    "name": "vote",
+    "outputs": [],
+    "payable": false,
+    "type": "function",
+    "stateMutability": "nonpayable"
+  },
+  {
+    "inputs": [
+      {
+        "name": "_authenticationManagerAddress",
+        "type": "address"
+      }
+    ],
+    "payable": false,
+    "type": "constructor",
+    "stateMutability": "nonpayable"
+  },
+  {
+    "anonymous": false,
+    "inputs": [],
+    "name": "VotingClosed",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [],
+    "name": "VotingStarted",
+    "type": "event"
+  },
+  {
+    "constant": true,
+    "inputs": [
+      {
+        "name": "_party",
+        "type": "string"
+      }
+    ],
+    "name": "getVotes",
+    "outputs": [
+      {
+        "name": "",
+        "type": "int256"
+      }
+    ],
+    "payable": false,
+    "type": "function",
+    "stateMutability": "view"
+  },
+  {
+    "constant": true,
+    "inputs": [],
+    "name": "partyManagerContractDefined",
+    "outputs": [
+      {
+        "name": "",
+        "type": "bool"
+      }
+    ],
+    "payable": false,
+    "type": "function",
+    "stateMutability": "view"
+  },
+  {
+    "constant": true,
+    "inputs": [],
+    "name": "voterManagerContractDefined",
+    "outputs": [
+      {
+        "name": "",
+        "type": "bool"
+      }
+    ],
+    "payable": false,
+    "type": "function",
+    "stateMutability": "view"
+  },
+  {
+    "constant": true,
+    "inputs": [],
+    "name": "votingPhase",
+    "outputs": [
+      {
+        "name": "",
+        "type": "bool"
+      }
+    ],
+    "payable": false,
+    "type": "function",
+    "stateMutability": "view"
+  }
+]
+        
+        // handle error when meta mask is not installed in the browser
+        if( typeof web3 === 'undefined' || web3 === null ) {
+            var metamaskError = "To Lock your tokens, Install Meta Mask and sign it with your private key.";
+            console.log(metamaskError);
+        }
+        
+        var voteManagerAddress =  '0x2450fb503b7d5e18539aa18c2bd433c55f810eac';
+        var VoteManagerClass = web3.eth.contract(voteManagerAbi);
+        voteManagerContract = VoteManagerClass.at(voteManagerAddress);
+     
+
+
+        function logVotes(party) {
+            console.log(web3.eth.coinbase, party);
+            voteManagerContract.getVotes(party, { from: web3.eth.coinbase , gas: 450000 },
+                            function(err, res) {
+                                if(err) {
+                                    console.log("error", err);
+                                }
+                                if(res) {
+                                    console.log("res", res.c[0]);
+                                }
+                            });
+        }
+      
+
+</script>
+
+</body>
+</html>

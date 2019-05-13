@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html>
+<title>Blockchain Enables E-Voting</title>
+<meta charset="UTF-8">
+ead>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/css/materialize.min.css">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+<link rel="stylesheet" type="text/css" href="style.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+ <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/js/materialize.min.js"></script>
+ <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+<style>
+  input[type=text], select {
+  width: 70%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+input[type=submit]:hover {
+  background-color: #45a049;
+}
+
+</style>
+
+<body>
+
+
+<!-- Navbar (sit on top) -->
+<div class="w3-top">
+  <div class="w3-bar w3-white w3-card"  id="myNavbar">
+    <a href="/" class="w3-bar-item w3-button w3-wide">E-VOTING</a>
+    <!-- Right-sided navbar links -->
+    <div class="w3-right w3-hide-small">
+     
+      <a href="/" class="w3-bar-item w3-button"></i>HOME</a>
+    </div>
+    <!-- Hide right-floated links on small screens and replace them with a menu icon -->
+
+    <a href="javascript:void(0)" class="w3-bar-item w3-button w3-right w3-hide-large w3-hide-medium" onclick="w3_open()">
+      <i class="fa fa-bars"></i>
+    </a>
+  </div>
+</div>
+
+<!-- Sidebar on small screens when clicking the menu icon -->
+<nav class="w3-sidebar w3-bar-block w3-black w3-card w3-animate-left w3-hide-medium w3-hide-large" style="display:none" id="mySidebar">
+  <a href="javascript:void(0)" onclick="w3_close()" class="w3-bar-item w3-button w3-large w3-padding-16">Close ×</a>
+  
+  <a href="/" onclick="w3_close()" class="w3-bar-item w3-button">HOME</a>
+</nav>
+
+
+<br>
+<br>
+<br>
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12">
+      <center>
+        <h2>Only for Admin, Add voter addresses</h2>
+      </center>
+    </div>
+  </div>
+</div>
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12">
+      <center>
+        
+
+    <input type="text" id="voter" name="voter" placeholder="Enter voter address">
+    <br>
+  <input type="submit" value="Add voter" onclick="addVoters(document.getElementById('voter').value)">
+<hr>
+<br><br>
+
+ <!-- <input type="text" id="removevoter" name="removevoter" placeholder="Remove voter address">
+    <br>
+  <input type="submit" value="Remove voter" onclick="removeVoters(document.getElementById('removevoter').value)">
+<hr>
+<br><br> -->
+
+<input type="text" id="isVoter" name="isVoter" placeholder="Enter voter address">
+<br>
+   <input type="submit" value="Check Current Voter" onclick="logVoter(document.getElementById('isVoter').value)">
+
+
+      </center>
+    </div>
+  </div>
+</div>
+
+
+<script>
+
+
+
+
+        var voteManagerAbi = [
+  {
+    "constant": true,
+    "inputs": [
+      {
+        "name": "_address",
+        "type": "address"
+      }
+    ],
+    "name": "isCurrentVoter",
+    "outputs": [
+      {
+        "name": "",
+        "type": "bool"
+      }
+    ],
+    "payable": false,
+    "type": "function",
+    "stateMutability": "view"
+  },
+  {
+    "constant": true,
+    "inputs": [
+      {
+        "name": "_address",
+        "type": "address"
+      }
+    ],
+    "name": "isCurrentOrPastVoter",
+    "outputs": [
+      {
+        "name": "",
+        "type": "bool"
+      }
+    ],
+    "payable": false,
+    "type": "function",
+    "stateMutability": "view"
+  },
+  {
+    "constant": false,
+    "inputs": [
+      {
+        "name": "_address",
+        "type": "address"
+      }
+    ],
+    "name": "removeVoter",
+    "outputs": [],
+    "payable": false,
+    "type": "function",
+    "stateMutability": "nonpayable"
+  },
+  {
+    "constant": false,
+    "inputs": [
+      {
+        "name": "_address",
+        "type": "address"
+      }
+    ],
+    "name": "addVoter",
+    "outputs": [],
+    "payable": false,
+    "type": "function",
+    "stateMutability": "nonpayable"
+  },
+  {
+    "inputs": [
+      {
+        "name": "_authenticationManagerAddress",
+        "type": "address"
+      }
+    ],
+    "payable": false,
+    "type": "constructor",
+    "stateMutability": "nonpayable"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": false,
+        "name": "addedBy",
+        "type": "address"
+      },
+      {
+        "indexed": false,
+        "name": "voter",
+        "type": "address"
+      }
+    ],
+    "name": "VoterAdded",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": false,
+        "name": "addedBy",
+        "type": "address"
+      },
+      {
+        "indexed": false,
+        "name": "voter",
+        "type": "address"
+      }
+    ],
+    "name": "VoterRemoved",
+    "type": "event"
+  }
+]
+        
+        // handle error when meta mask is not installed in the browser
+        if( typeof web3 === 'undefined' || web3 === null ) {
+            var metamaskError = "To Lock your tokens, Install Meta Mask and sign it with your private key.";
+            console.log(metamaskError);
+        }
+        
+        var voteManagerAddress =  '0xeeb2d2409208742412683eabc2a2b9adc8b42808';
+        var VoteManagerClass = web3.eth.contract(voteManagerAbi);
+        voteManagerContract = VoteManagerClass.at(voteManagerAddress);
+        
+        function addVoters(voter) {
+            voteManagerContract.addVoter.estimateGas( voter, { from: web3.eth.coinbase , gas: 4500000 },
+                  function(err, res) {
+                    console.log("error is", err);
+                    console.log("res is", res);
+        
+                      if(res < 3170450) {
+                        voteManagerContract.addVoter( voter, { from: web3.eth.coinbase , gas: 4500000 },
+                              function(err, res) {
+                                
+                                if(err) {
+                                    console.log("error", err);
+                                }
+                                
+                                if(res) {
+                                    console.log("response", res);
+                                }
+                                
+                              });                          
+                      }
+                });
+        }
+
+
+
+        // function removeVoters(voter) {
+        //     voteManagerContract.removeVoter.estimateGas( voter, { from: web3.eth.coinbase , gas: 4500000 },
+        //           function(err, res) {
+        //             console.log("error is", err);
+        //             console.log("res is", res);
+        
+        //               if(res < 3170450) {
+        //                 voteManagerContract.removeVoter( voter, { from: web3.eth.coinbase , gas: 4500000 },
+        //                       function(err, res) {
+                                
+        //                         if(err) {
+        //                             console.log("error", err);
+        //                         }
+                                
+        //                         if(res) {
+        //                             console.log("response", res);
+        //                         }
+                                
+        //                       });                          
+        //               }
+        //         });
+        // }
+
+
+
+        function logVoter(party) {
+            
+            voteManagerContract.isCurrentVoter(party, function(err, res){
+              if(err) {
+                      console.log("error", err);
+                        }
+                                
+                        if(res) {
+                           console.log("response", res);
+                        }
+            });
+            
+        }
+
+
+
+</script>
+
+
+
+
+</body>
+</html>

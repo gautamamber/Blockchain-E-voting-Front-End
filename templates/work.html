@@ -20,11 +20,11 @@ ead>
 <!-- Navbar (sit on top) -->
 <div class="w3-top">
   <div class="w3-bar w3-white w3-card"  id="myNavbar">
-    <a href="#home" class="w3-bar-item w3-button w3-wide">E-VOTING</a>
+    <a href="/" class="w3-bar-item w3-button w3-wide">E-VOTING</a>
     <!-- Right-sided navbar links -->
     <div class="w3-right w3-hide-small">
      
-      <a href="index.html" class="w3-bar-item w3-button"></i>HOME</a>
+      <a href="/" class="w3-bar-item w3-button"></i>HOME</a>
     </div>
     <!-- Hide right-floated links on small screens and replace them with a menu icon -->
 
@@ -38,7 +38,7 @@ ead>
 <nav class="w3-sidebar w3-bar-block w3-black w3-card w3-animate-left w3-hide-medium w3-hide-large" style="display:none" id="mySidebar">
   <a href="javascript:void(0)" onclick="w3_close()" class="w3-bar-item w3-button w3-large w3-padding-16">Close ×</a>
   
-  <a href="index.html" onclick="w3_close()" class="w3-bar-item w3-button">HOME</a>
+  <a href="/" onclick="w3_close()" class="w3-bar-item w3-button">HOME</a>
 </nav>
 
 
@@ -66,33 +66,23 @@ ead>
     <p class="w3-justify">
 
 Our country is a worlds largest democracy country and voting is a very crucial part of indian democracy. Indian politicians or any goverment is elected by only voting. The most common way of voting was in ancient time is Paper ballot system and not a days with EVM or electronic voting machine which is a software based voting. Because it is a software and control by an organization it is very difficult to maintain the security of votes. In E-voting was introduced to address those concerns. In this paper, we propose a blockchain enabled Voting system which is decentralized, secure with cryptography, non-alterable. By using this the voting system is transparent, secure, cost effective and immpossible to alter votes by anyone. For this we used a Ethereum Blockchain to store votes and smart contracts for voting. Our implementation was deployed on Ethereum blockchain to demonstrate usuability, scalability, efficiency.</p>
-<p><b>Keyswords: </b>Voting, Elections, Blockchain, Ethereum, Smart contracts </p>
+<p></p>
 
 
 
 <p><h3><b>Introduction</b></h3></p>
     <p class="w3-justify">
 
-India is a largest democracy country in the world. Indian democracy is govern by the people, for the people and of the people. The citizens of india has right to choose their representative or leaders by voting. So every citizens who are above 18 years right to vote. In Indian democracy voting plays a vital or electing leaders. In India and in many countries voting is done by EVM (Electronic Voting Machine). Now there is problem. Many times questions arises Is EVM can be hacked or in recent survey it is said by cyber expert, EVM could be hacked. So, its a matter of security of common people votes. 
-Now to prevent this, We are here to come up with a solution Blockchain enabled Voting.</p>
+India is a largest democracy country in the world. Indian democracy is governed by the people, for the people and of the people. The citizens of india has right to choose their representative or leaders by voting. So every citizens who are above 18 years right to vote. In Indian democracy voting plays a vital or electing leaders. In India and in many countries voting is done by EVM (Electronic Voting Machine). Now there is problem. Many times questions arises Is EVM can be hacked or in recent survey it is said by cyber expert, EVM could be hacked. So, it's a matter of security of common people votes. Now to prevent this, We are here to come up with a solution Blockchain enabled Voting.
+
+Before explaining what is blockchain, let's consider a scenario, There are two friends Alice and Bob, Alice wants to send some amount of money (100$) to Bob. What he do, he will transfer money with his bank account and bank manager controls your transaction, he will deduct fix amount from your account and add to Bob's account then transaction complete. In this case bank and bank manager act as a center or third party on which we are depend. Not only in money transaction but also in many sectors in which we will depend on some central party or authority. To establish trust between ourselves we depend on individual third party. For years we've depending on these middlemen to trust each other. Someone might ask “What is the problem depending on them?” The problem is they are single party or person or organization.
+So how to overcome this,
+In 2008 a person named Satoshi Nakamoto released a Paper “Bitcoin: A peer to peer Electronic Cash system” [1]. It was the first application of Blockchain technology for cryptocurrency called Bitcoin. Continue with our above example, what if Alice wants to send money to Bob without any third party like bank. Blockchain will solve this problem.
+</p>
 
 
-<p><h3><b>What is Blockchain ? </b></h3></p>
-    <p class="w3-justify">
-
-Before explaining what is blockchain, lets consider a scenario, There are two friends Alice and Bob, Alice wants to send some amount of money (10000$) to Bob. What he do, he will transfer money with his bank account and bank manager controls your transaction, he will deduct fix amount from your account and add to Bob's account then transaction complete. In this case bank and bank manager act as a center or third party on which we are depend. Not only money transaction but also in many sectors in which we will depend on some central party or authority. To establish trust between ourselves we depend on individual third party. For years we've depending on these middlemen to trust each other. Someone might ask “What is the problem depending on them?” The problem is they are single party or person or organization.</p>
-
-
-
-<p><h3><b>So how to overcome with above problem</b></h3></p>
-    <p class="w3-justify">
-
-In 2008 a person named Satoshi Nakamoto released a Paper “Bitcoin: A peer to peer Electronic Cash system”. It was the first application of Blockchain technology for cryptocurrency called Bitcoin. 
-Continue with our above example, what if Alice wants to send money to Bob without any third party like bank. Blockchain will solve this problem. 
-Blockchain is a growing list of transaction or records called blocks which are linked with cryptographic hash. Each block contains a cyrptographic hash of its previous block (just like linkedlist, contains address to next node), timestamp and transaction data and merkely root.</p>
-<br>
 <center>
-  <img src="Images/blockchaian.jpg" height="300px;" width="300px;">
+  <img src="static/blockchaian.jpg" height="300px;" width="300px;">
 </center>
 
 
@@ -101,29 +91,36 @@ Blockchain is a growing list of transaction or records called blocks which are l
 
 <ul>
   <li>
-    <p>Peer to Peer network</p>
+    <p><b>Peer to Peer network: </b>A peer to peer network is a group of computers or PC, which acts as a node for sharing data, files, content within a group. There is no central server in peer to peer network, each node or computer acts as a server as shown in Fig: 2. When a peer to peer network is established over the internet sharing of data is split between all nodes in that network.</p>
+    <br>
     <center>
-  <img src="Images/peer_to_peer.jpg" height="300px;" width="300px;">
+  <img src="static/peer_to_peer.jpg" height="300px;" width="300px;">
 </center>
+<br>
   </li>
   <li>
-    <p>Decentralized</p>
+    <p><b>Decentralized: </b>Decentralized technology means doesn't rely on central authority or central point of control.</p><br>
+
     <center>
-  <img src="Images/decentralized.jpg" height="300px;" width="300px;">
-</center>
+  <img src="static/decentralized.jpg" height="300px;" width="300px;">
+</center><br>
+
   </li>
   <li>
-    <p>Disdtributive Ledgers</p>
+    <p><b>Disdtributive Ledgers: </b>Shared and synchronized digital data</p><br>
   </li>
   <li>
-    <p>Cryptographic hash</p>
+    <p><b>Cryptographic hash: </b>Hashing in cryptography is which takes a message as an input and return a fixed size string of bytes (see Figure 4). The string is called Hash value. It is very difficult to calculate reverse the hash value. It is also not possible that two different messages has a same hash. Most commonly used hash functions are MD5, SHA256, SHA512</p><br>
     <center>
-  <img src="Images/hash.jpg" height="300px;" width="300px;">
-</center>
-  </li>
+  <img src="static/hash.jpg" height="300px;" width="300px;">
+</center><br>
+  </li> 
   <li>
-    <p>Proof of work</p>
-  </li>
+    <p><b>Public Key Cryptography: </b>Public key or Asymmetric key cryptographic is an encryption scheme which uses public key and private key for message passing. Example: There are two person: A and B both have public key and private key. Public key is spread to all and private key is secret. If A wants to send message to B, He will encrypt the message with B's public key because B's public key is spread to all and not secure. Now B will get the encrypted message and decrypt that message with his Private key. So only B can see the message, example is shown in figure 5. In this Both can achieve end to end encryption of message.</p><br>
+    <center>
+  <img src="static/publicKeyCryptography.jpg" height="300px;" width="300px;">
+</center><br>
+  </li> 
 </ul>
 
 </p>
@@ -145,6 +142,33 @@ Initially when Bitcoin paper was released it was the only application of Blockch
 
 
 
+<p><h3><b>Implementation:</b></h3></p>
+    <p class="w3-justify">
+
+    <br>
+    <center><img src="static/evoting.png" height="300px;" width="700px;"></center>
+
+To make secure voting system we built a secure Blockchain enables E Voting. In which only authorized user will able to vote and there will be no tempering and alteration in votes.</p>
+<br>
+
+<p><h3><b>Proposed Work:</b></h3></p>
+    <p class="w3-justify">
+
+   Voting system have been for many years and the major concern is integrity and security issues. Many voting system have been proposed and implemented but some vulnerability issues are still there. Voting system is said to be successful when it is transparent, secure, unalterable. Blockchain is one of the solution which is proposed in this paper. Because of its transparency, security and unalterable features. In blockchain enabled voting the government able to add valid and eligible voters in terms of their addresses and open voting. Voter who are eligible to vote and registered by the government able to vote. No vote tempering is allow in Blockchain voting. Voting is transparent. </p>
+<br>
+
+<p><h3><b>Conclusion:</b></h3></p>
+    <p class="w3-justify">
+
+    
+
+As discussed in paper E-voting using blockchain will be prove a potential solution because of its properties such as transparency, immutability, non-alterable. Voting now a days with EVM is easily mutable and hackable. In Blockchain based E Voting only valid voters can vote and no alteration of votes because in Blockchain it is irreversible. The use of blockchain ensures the security of votes and valid voters.
+</p>
+<br>
+
+
+
+
   </div>
 </div>
 </div>
@@ -154,7 +178,7 @@ Initially when Bitcoin paper was released it was the only application of Blockch
 
 <!-- Footer -->
 <footer class="w3-center w3-black w3-padding-64">
-  <a href="#home" class="w3-button w3-light-grey"><i class="fa fa-arrow-up w3-margin-right"></i>To the top</a>
+  <a href="#" class="w3-button w3-light-grey"><i class="fa fa-arrow-up w3-margin-right"></i>To the top</a>
   <div class="w3-xlarge w3-section">
     <i class="fa fa-facebook-official w3-hover-opacity"></i>
     <i class="fa fa-instagram w3-hover-opacity"></i>
@@ -166,32 +190,7 @@ Initially when Bitcoin paper was released it was the only application of Blockch
  
 </footer>
  
-<script>
-// Modal Image Gallery
-function onClick(element) {
-  document.getElementById("img01").src = element.src;
-  document.getElementById("modal01").style.display = "block";
-  var captionText = document.getElementById("caption");
-  captionText.innerHTML = element.alt;
-}
 
-
-// Toggle between showing and hiding the sidebar when clicking the menu icon
-var mySidebar = document.getElementById("mySidebar");
-
-function w3_open() {
-  if (mySidebar.style.display === 'block') {
-    mySidebar.style.display = 'none';
-  } else {
-    mySidebar.style.display = 'block';
-  }
-}
-
-// Close the sidebar with the close button
-function w3_close() {
-    mySidebar.style.display = "none";
-}
-</script>
 
 </body>
 </html>
