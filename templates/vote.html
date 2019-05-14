@@ -8,7 +8,7 @@ ead>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
-<link rel="stylesheet" type="text/css" href="style.css">
+<link rel="stylesheet" type="text/css" href="static/style.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
@@ -147,12 +147,12 @@ ead>
 <footer class="w3-center w3-black w3-padding-64">
   <a href="#home" class="w3-button w3-light-grey"><i class="fa fa-arrow-up w3-margin-right"></i>To the top</a>
   <div class="w3-xlarge w3-section">
-    <i class="fa fa-facebook-official w3-hover-opacity"></i>
-    <i class="fa fa-instagram w3-hover-opacity"></i>
-    <i class="fa fa-snapchat w3-hover-opacity"></i>
-    <i class="fa fa-pinterest-p w3-hover-opacity"></i>
-    <i class="fa fa-twitter w3-hover-opacity"></i>
-    <i class="fa fa-linkedin w3-hover-opacity"></i>
+    <a href="https://www.facebook.com/amber.gautam.5"><i class="fa fa-facebook-official w3-hover-opacity"></i></a>
+    <a href="https://www.instagram.com/gautam_amber0777/?hl=en"><i class="fa fa-instagram w3-hover-opacity"></i></a>
+   <a href="https://github.com/gautamamber"> <i class="fa fa-github w3-hover-opacity"></i></a>
+   
+    <a href="https://twitter.com/gautam_amber"><i class="fa fa-twitter w3-hover-opacity"></i></a>
+   <a href="https://www.linkedin.com/in/amber-gautam-988782137/"> <i class="fa fa-linkedin w3-hover-opacity"></i></a>
   </div>
   <p>Created By: Amber Gautam</p>
 </footer>
@@ -164,6 +164,20 @@ ead>
 
         var voteManagerAbi = [
   {
+    "constant": true,
+    "inputs": [],
+    "name": "votingPhase",
+    "outputs": [
+      {
+        "name": "",
+        "type": "bool"
+      }
+    ],
+    "payable": false,
+    "type": "function",
+    "stateMutability": "view"
+  },
+  {
     "constant": false,
     "inputs": [],
     "name": "close",
@@ -173,13 +187,51 @@ ead>
     "stateMutability": "nonpayable"
   },
   {
-    "constant": false,
+    "constant": true,
     "inputs": [],
-    "name": "openVoting",
-    "outputs": [],
+    "name": "partyManagerContractDefined",
+    "outputs": [
+      {
+        "name": "",
+        "type": "bool"
+      }
+    ],
     "payable": false,
     "type": "function",
-    "stateMutability": "nonpayable"
+    "stateMutability": "view"
+  },
+  {
+    "constant": true,
+    "inputs": [],
+    "name": "voterManagerContractDefined",
+    "outputs": [
+      {
+        "name": "",
+        "type": "bool"
+      }
+    ],
+    "payable": false,
+    "type": "function",
+    "stateMutability": "view"
+  },
+  {
+    "constant": true,
+    "inputs": [
+      {
+        "name": "_party",
+        "type": "string"
+      }
+    ],
+    "name": "getVotes",
+    "outputs": [
+      {
+        "name": "",
+        "type": "int256"
+      }
+    ],
+    "payable": false,
+    "type": "function",
+    "stateMutability": "view"
   },
   {
     "constant": false,
@@ -190,6 +242,15 @@ ead>
       }
     ],
     "name": "setPartyManagerContractDefined",
+    "outputs": [],
+    "payable": false,
+    "type": "function",
+    "stateMutability": "nonpayable"
+  },
+  {
+    "constant": false,
+    "inputs": [],
+    "name": "openVoting",
     "outputs": [],
     "payable": false,
     "type": "function",
@@ -245,67 +306,6 @@ ead>
     "inputs": [],
     "name": "VotingStarted",
     "type": "event"
-  },
-  {
-    "constant": true,
-    "inputs": [
-      {
-        "name": "_party",
-        "type": "string"
-      }
-    ],
-    "name": "getVotes",
-    "outputs": [
-      {
-        "name": "",
-        "type": "int256"
-      }
-    ],
-    "payable": false,
-    "type": "function",
-    "stateMutability": "view"
-  },
-  {
-    "constant": true,
-    "inputs": [],
-    "name": "partyManagerContractDefined",
-    "outputs": [
-      {
-        "name": "",
-        "type": "bool"
-      }
-    ],
-    "payable": false,
-    "type": "function",
-    "stateMutability": "view"
-  },
-  {
-    "constant": true,
-    "inputs": [],
-    "name": "voterManagerContractDefined",
-    "outputs": [
-      {
-        "name": "",
-        "type": "bool"
-      }
-    ],
-    "payable": false,
-    "type": "function",
-    "stateMutability": "view"
-  },
-  {
-    "constant": true,
-    "inputs": [],
-    "name": "votingPhase",
-    "outputs": [
-      {
-        "name": "",
-        "type": "bool"
-      }
-    ],
-    "payable": false,
-    "type": "function",
-    "stateMutability": "view"
   }
 ];
         
@@ -315,25 +315,28 @@ ead>
             console.log(metamaskError);
         }
         
-        var voteManagerAddress =  '0x2450fb503b7d5e18539aa18c2bd433c55f810eac';
+        var voteManagerAddress =  '0xc016271d1d4844bc93326ddeea88a0c47618e48a';
         var VoteManagerClass = web3.eth.contract(voteManagerAbi);
         voteManagerContract = VoteManagerClass.at(voteManagerAddress);
         
         function voteForGood(party) {
             voteManagerContract.vote.estimateGas( party, { from: web3.eth.coinbase , gas: 4500000 },
                   function(err, res) {
+                    alert("SORRY YOU ARE NOT ABLE TO VOTE.")
                     console.log("error is", err);
-                    console.log("res is", res);
+                   
+                    
         
                       if(res < 3170450) {
                         voteManagerContract.vote( party, { from: web3.eth.coinbase , gas: 4500000 },
                               function(err, res) {
                                 
                                 if(err) {
-                                    console.log("error", err);
+                                    alert("SORRY YOU ARE NOT ABLE TO VOTE.")
                                 }
                                 
                                 if(res) {
+                                 
                                     console.log("response", res);
                                 }
                                 
@@ -344,19 +347,6 @@ ead>
 
 
 
-        // function logVotes(party) {
-        //     console.log(web3.eth.coinbase, party);
-        //     voteManagerContract.getVotes(party, { from: web3.eth.coinbase , gas: 450000 },
-        //                     function(err, res) {
-        //                         if(err) {
-        //                             console.log("error", err);
-        //                         }
-        //                         if(res) {
-        //                             console.log("res", res.c[0]);
-        //                         }
-        //                     });
-        // }
-        
        
 
 

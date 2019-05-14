@@ -8,7 +8,7 @@ ead>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
-<link rel="stylesheet" type="text/css" href="style.css">
+<link rel="stylesheet" type="text/css" href="static/style.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
@@ -25,10 +25,10 @@ ead>
   box-sizing: border-box;
 }
 
-input[type=submit]:hover {
+/*input[type=submit]{
   background-color: #45a049;
 }
-
+*/
 </style>
 
 <body>
@@ -81,7 +81,7 @@ input[type=submit]:hover {
 
     <input type="text" id="voter" name="voter" placeholder="Enter voter address">
     <br>
-  <input type="submit" value="Add voter" onclick="addVoters(document.getElementById('voter').value)">
+  <input type="submit" class="waves-effect waves-light btn" value="Add voter" onclick="addVoters(document.getElementById('voter').value)">
 <hr>
 <br><br>
 
@@ -93,7 +93,7 @@ input[type=submit]:hover {
 
 <input type="text" id="isVoter" name="isVoter" placeholder="Enter voter address">
 <br>
-   <input type="submit" value="Check Current Voter" onclick="logVoter(document.getElementById('isVoter').value)">
+   <input type="submit" class="waves-effect waves-light btn" value="Check Current Voter" onclick="logVoter(document.getElementById('isVoter').value)">
 
 
       </center>
@@ -227,13 +227,14 @@ input[type=submit]:hover {
             console.log(metamaskError);
         }
         
-        var voteManagerAddress =  '0xeeb2d2409208742412683eabc2a2b9adc8b42808';
+        var voteManagerAddress =  '0x2e2a75135ebeb695c1986c9557032b504d47f32e';
         var VoteManagerClass = web3.eth.contract(voteManagerAbi);
         voteManagerContract = VoteManagerClass.at(voteManagerAddress);
         
         function addVoters(voter) {
             voteManagerContract.addVoter.estimateGas( voter, { from: web3.eth.coinbase , gas: 4500000 },
                   function(err, res) {
+                    alert("SORRY YOU ARE NOT Admin")
                     console.log("error is", err);
                     console.log("res is", res);
         
@@ -242,7 +243,7 @@ input[type=submit]:hover {
                               function(err, res) {
                                 
                                 if(err) {
-                                    console.log("error", err);
+                                    alert("SORRY YOU ARE NOT ADMIN.")
                                 }
                                 
                                 if(res) {
@@ -256,39 +257,16 @@ input[type=submit]:hover {
 
 
 
-        // function removeVoters(voter) {
-        //     voteManagerContract.removeVoter.estimateGas( voter, { from: web3.eth.coinbase , gas: 4500000 },
-        //           function(err, res) {
-        //             console.log("error is", err);
-        //             console.log("res is", res);
-        
-        //               if(res < 3170450) {
-        //                 voteManagerContract.removeVoter( voter, { from: web3.eth.coinbase , gas: 4500000 },
-        //                       function(err, res) {
-                                
-        //                         if(err) {
-        //                             console.log("error", err);
-        //                         }
-                                
-        //                         if(res) {
-        //                             console.log("response", res);
-        //                         }
-                                
-        //                       });                          
-        //               }
-        //         });
-        // }
-
-
-
         function logVoter(party) {
             
             voteManagerContract.isCurrentVoter(party, function(err, res){
               if(err) {
+                alert("False")
                       console.log("error", err);
                         }
                                 
                         if(res) {
+                          alert("True")
                            console.log("response", res);
                         }
             });
