@@ -70,7 +70,7 @@ ead>
        <p class="vote_margin"><b>आम आदमी पार्टी</b></p>
        <p class="vote_margin"><b>Candidate: Arvind Kejriwal</b></p>
        <button onclick="logVotes('AAP')" class="waves-effect waves-light btn" id="button1">Result for AAP</button>
-       <p class="vote_margin"><b>Total Votes: 10</b></p>
+       <!-- <p class="vote_margin"><b>Total Votes: <h3 id="myResult"></h3></b></p> -->
      </div>
     </div>
 
@@ -87,7 +87,7 @@ ead>
 बहुजन समाजवादी पार्टी</b></p>
        <p class="vote_margin"><b>Candidate: Mayawati</b></p>
        <button onclick="logVotes('BASPA')" class="waves-effect waves-light btn" id="button2">Result for BASPA</button>
-       <p class="vote_margin"><b>Total Votes: 10</b></p>
+       <!-- <p class="vote_margin"><b>Total Votes:  <h3 id="myResult"></h3></b></p> -->
      </div>
     </div>
   </div>
@@ -113,7 +113,7 @@ ead>
        <p class="vote_margin"><b>कांग्रेस</b></p>
        <p class="vote_margin"><b>Candidate: Rahul Gandhi</b></p>
        <button onclick="logVotes('CONGRESS')" class="waves-effect waves-light btn" id="button4">Result for Congress</button>
-       <p class="vote_margin"><b>Total Votes: 10</b></p>
+       <!-- <p class="vote_margin"><b>Total Votes:  <h3 id="myResult"></h3></b></p> -->
      </div>
     </div>
 
@@ -130,8 +130,8 @@ ead>
 भारतीय जनता पार्टी</b></p>
        <p class="vote_margin"><b>Candidate: Narendra Modi</b></p>
        <button onclick="logVotes('BJP')" class="waves-effect waves-light btn" id="button3">Result for BJP</button>
-       <p class="vote_margin"><b>Total Votes: 10</b></p>
-     </div>
+<!--        <p class="vote_margin"><b>Total Votes:  <h3 id="myResult"></h3>></b></p>
+ -->     </div>
     </div>
   </div>
 </div>
@@ -333,10 +333,10 @@ ead>
             voteManagerContract.getVotes(party, { from: web3.eth.coinbase , gas: 450000 },
                             function(err, res) {
                                 if(err) {
-                                    console.log("error", err);
+                                      alert("Sorry something went wrong")
                                 }
                                 if(res) {
-                                    console.log("res", res.c[0]);
+                                    alert("Total votes of " + party + ":" + res.c[0])
                                 }
                             });
         }

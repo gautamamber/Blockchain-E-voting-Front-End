@@ -322,22 +322,27 @@ ead>
         function voteForGood(party) {
             voteManagerContract.vote.estimateGas( party, { from: web3.eth.coinbase , gas: 4500000 },
                   function(err, res) {
-                    alert("SORRY YOU ARE NOT ABLE TO VOTE.")
-                    console.log("error is", err);
                    
-                    
+                      if(err) {
+                                    alert("You are not eligible for vote")
+                                }
+                                
+                                if(res) {
+                                 
+                                    alert("Vote successful");
+                                }
         
                       if(res < 3170450) {
                         voteManagerContract.vote( party, { from: web3.eth.coinbase , gas: 4500000 },
                               function(err, res) {
                                 
                                 if(err) {
-                                    alert("SORRY YOU ARE NOT ABLE TO VOTE.")
+                                    console.log("Error")
                                 }
                                 
                                 if(res) {
                                  
-                                    console.log("response", res);
+                                    console.log("response");
                                 }
                                 
                               });                          

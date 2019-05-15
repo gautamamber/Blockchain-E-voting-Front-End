@@ -79,9 +79,9 @@ ead>
       <center>
         
 
-    <input type="text" id="voter" name="voter" placeholder="Enter voter address">
+    <input type="text" id="voter" name="voter" placeholder="Enter voter address" required>
     <br>
-  <input type="submit" class="waves-effect waves-light btn" value="Add voter" onclick="addVoters(document.getElementById('voter').value)">
+  <input type="submit" class="waves-effect waves-light btn" value="Add voter"  onclick="addVoters(document.getElementById('voter').value)">
 <hr>
 <br><br>
 
@@ -91,7 +91,7 @@ ead>
 <hr>
 <br><br> -->
 
-<input type="text" id="isVoter" name="isVoter" placeholder="Enter voter address">
+<input type="text" id="isVoter" name="isVoter" placeholder="Enter voter address" required> 
 <br>
    <input type="submit" class="waves-effect waves-light btn" value="Check Current Voter" onclick="logVoter(document.getElementById('isVoter').value)">
 
@@ -233,17 +233,21 @@ ead>
         
         function addVoters(voter) {
             voteManagerContract.addVoter.estimateGas( voter, { from: web3.eth.coinbase , gas: 4500000 },
-                  function(err, res) {
-                    alert("SORRY YOU ARE NOT Admin")
-                    console.log("error is", err);
-                    console.log("res is", res);
-        
+                  function(err, res) {     
+                  if(err) {
+                                    alert("You are not authorize to voters")
+                                }
+                                
+                                if(res) {
+                                 
+                                    alert("Voter add successful");
+                                }   
                       if(res < 3170450) {
                         voteManagerContract.addVoter( voter, { from: web3.eth.coinbase , gas: 4500000 },
                               function(err, res) {
                                 
                                 if(err) {
-                                    alert("SORRY YOU ARE NOT ADMIN.")
+                                   console.log("Error",err)
                                 }
                                 
                                 if(res) {
@@ -261,12 +265,10 @@ ead>
             
             voteManagerContract.isCurrentVoter(party, function(err, res){
               if(err) {
-                alert("False")
-                      console.log("error", err);
+                console.log("error", err);
                         }
                                 
                         if(res) {
-                          alert("True")
                            console.log("response", res);
                         }
             });
